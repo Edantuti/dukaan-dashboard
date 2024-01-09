@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <SidePanel />
-      <section className="bg-[#FBFBFB]">
+      <section className="bg-gray-50 md:w-full w-[543px]">
         <Header />
         <OverviewSection />
         <TransactionSection />

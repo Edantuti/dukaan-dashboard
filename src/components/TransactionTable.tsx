@@ -1,4 +1,3 @@
-// import { useState } from "react"
 // import {data} from "../data.json"
 import Search from "../assets/Search.svg"
 import Sort from "../assets/Sort.svg"
@@ -21,7 +20,7 @@ const TransactionTable = () => {
         <div className="flex items-center">
           <span className="relative">
             <img src={Search} className="absolute ps-4 inset-y-3 flex items-center" />
-            <input type="text" placeholder="Search by order ID..." className="ps-10 border p-2 rounded-md" />
+            <input type="text" placeholder="Search by order ID..." className="ps-10 border p-2 rounded-md lg:w-[100%] w-64" />
           </span>
           <div className="flex ml-auto gap-3">
             <span className="flex gap-2 px-3 py-1.5 border-2 rounded-md items-center">
@@ -35,18 +34,18 @@ const TransactionTable = () => {
         </div>
         <Table />
         <nav className="pagination mx-auto w-full flex items-center justify-center py-5">
-          <div className="flex items-center p-1.5 gap-1 border-2 rounded-md text-[#4c4c4c]">
+          <div className="flex items-center p-1.5 lg:gap-1 border-2 rounded-md text-[#4c4c4c] text-sm">
             <img src={Left} className="p-1.5" />
             <span className="px-1.5">Previous</span>
           </div>
-          <ul className="flex flex-row items-center gap-2 px-6">
+          <ul className="flex flex-row items-center gap-2 lg:px-6">
             <PaginationItem value="1" />
             <PaginationItem value="..." />
-            <PaginationItem value="10" />
-            <PaginationItem value="11" />
-            <PaginationItem value="12" />
-            <PaginationItem value="13" />
-            <PaginationItem value="14" />
+            <PaginationItem value="10" className="lg:block hidden" />
+            <PaginationItem value="11" className="lg:block hidden" />
+            <PaginationItem value="12" className="lg:block hidden" />
+            <PaginationItem value="13" className="lg:block hidden" />
+            <PaginationItem value="14" className="lg:block hidden" />
             <PaginationItem value="15" />
             <PaginationItem value="16" />
             <PaginationItem value="17" />
@@ -62,10 +61,11 @@ const TransactionTable = () => {
     </>
   )
 }
-const PaginationItem = (props: { value: string }) => {
+const PaginationItem = (props: { value: string, className?: string }) => {
   return (
     <>
-      <li className="w-8 h-8 p-1 text-center text-[#4c4c4c] rounded hover:bg-[#146EB4] hover:bg-muted/100 hover:text-white">{props.value}</li>
+      <li className={`w-8 h-8 p-1 text-center text-[#4c4c4c] rounded hover:bg-[#146EB4] hover:bg-muted/100 hover:text-white transition-colors ${props.className}`} > {props.value}</li >
+
     </>
   )
 }
@@ -73,9 +73,9 @@ const Table = () => {
   return (
     <>
       <table className="w-full my-3 p-3 border-collapse">
-        <thead className="bg-[#f2f2f2] text-[#4c4c4c] font-medium">
+        <thead className="bg-[#f2f2f2] text-[#4c4c4c] font-medium lg:text-lg text-sm">
           <tr className="">
-            <th scope="col" className="font-medium py-2.5 px-3 text-left rounded-s">Order ID</th>
+            <th scope="col" className="font-medium md:py-2.5 px-3 text-left rounded-s">Order ID</th>
             <th scope="col" className="font-medium py-2.5 text-left">Order date</th>
             <th scope="col" className="font-medium py-2.5 text-right">Order amount</th>
             <th scope="col" className="font-medium py-2.5 px-3 text-right rounded-e">
@@ -111,7 +111,7 @@ const Table = () => {
 const TableRow = (props: { id: string, date: string, amount: string, transaction: string }) => {
   return (
     <>
-      <tr className="border-b">
+      <tr className="border-b lg:text-lg text-sm">
         <th scope="row" className="text-left text-blue-500 py-3.5 pl-3 font-medium">{props.id}</th>
         <td className="text-left py-3.5">{props.date}</td>
         <td className="text-right py-3.5">{props.amount}</td>

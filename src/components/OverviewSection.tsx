@@ -24,9 +24,9 @@ const OverviewSection = () => {
 const OverviewCard = (props: { title: string, content: string }) => {
   return (
     <>
-      <div className="shadow-md rounded-lg w-[45vw] p-5 space-y-4 bg-white">
+      <div className="shadow-md rounded-lg w-[50%] p-5 space-y-4 bg-white">
         <p className="text-[#4c4c4c]">{props.title}</p>
-        <p className="text-4xl font-medium">{props.content}</p>
+        <p className="lg:text-4xl text-2xl font-medium">{props.content}</p>
       </div>
     </>
   )
