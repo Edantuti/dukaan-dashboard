@@ -1,3 +1,5 @@
+// import { useState } from "react"
+// import {data} from "../data.json"
 import Search from "../assets/Search.svg"
 import Sort from "../assets/Sort.svg"
 import Download from "../assets/Download.svg"
@@ -6,6 +8,13 @@ import Left from "../assets/Left.svg"
 import Right from "../assets/Right.svg"
 
 const TransactionTable = () => {
+  //TODO: Making Pagination responsive
+  // const [start, setStart] = useState<number>(0);
+  // const [end, setEnd] = useState<number>(18);
+  // function PaginationIncrement() {
+  //   setStart(start + 18)
+  //   setEnd(Math.min())
+  // }
   return (
     <>
       <div className="my-5 bg-white mx-8 p-3 shadow rounded flex flex-col">
